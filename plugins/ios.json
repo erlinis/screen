@@ -1,0 +1,1 @@
+{"prepare_queue":{"installed":[],"uninstalled":[]},"config_munge":{"config.xml":{"/*":{"<feature name=\"Screenshot\"><param name=\"ios-package\" value=\"Screenshot\" /></feature>":1}}},"installed_plugins":{"com.neocaresolutions.screenshot":{"PACKAGE_NAME":"io.cordova.hellocordova"}},"dependent_plugins":{}}

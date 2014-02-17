@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.neocaresolutions.screenshot"
+      version="0.1.0">
+    <name>Screenshot</name>
+    <author>Wit Chitrapongse</author>
+    <description>
+        Cordova Screenshot Plugin for NEO. It's pretty much a wrapper from a few other projects found on github.
+        For iOS, https://github.com/bobbijvoet/phonegap3-screenshot-plugin 
+        For Android,
+            https://github.com/purplecabbage/phonegap-plugins/blob/master/Android/Screenshot/v2.0.0/src/org/apache/cordova/Screenshot.java
+
+            http://jbkflex.wordpress.com/2012/12/23/saving-image-to-android-devices-gallery-phonegap-android/
+    </description>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" platform="android|ios"/>
+    </engines>
+ 
+    <js-module src="www/screenshot.js" name="Screenshot">
+        <clobbers target="Screenshot" />
+    </js-module>
+ 
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Screenshot">
+                <param name="android-package" value="com.neocaresolutions.screenshot.Screenshot"/>
+            </feature>
+        </config-file> 
+        <source-file src="src/android/com/neocaresolutions/screenshot/Screenshot.java" target-dir="src/com/neocaresolutions/screenshot/" />
+    </platform>
+
+     <platform name="ios">    
+        <config-file target="config.xml" parent="/*">
+            <feature name="Screenshot">
+                <param name="ios-package" value="Screenshot" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Screenshot.h" />
+        <source-file src="src/ios/Screenshot.m" />
+    </platform>
+</plugin>
